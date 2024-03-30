@@ -1,3 +1,5 @@
+#server.py - note... this is two different files...seperate them and run them at the same time. the server code first( this is for keerthi)
+
 import socket
 
 def echo_server(host, port):

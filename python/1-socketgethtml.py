@@ -1,4 +1,3 @@
-#server.py - note... this is two different files...seperate them and run them at the same time. the server code first( this is for keerthi)
 
 import socket
 from urllib.parse import urlparse
@@ -46,26 +45,3 @@ if __name__ == "__main__":
 
     print(f"Web page downloaded and saved as {filename}")
 
-
-#client.py
-
-import socket
-
-def echo_client(host, port):
-    # Create a TCP socket
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
-        # Connect to the server
-        client_socket.connect((host, port))
-
-        # Send data to server
-        message = input("Enter message to send to server: ")
-        client_socket.sendall(message.encode())
-
-        # Receive response from server and echo it
-        response = client_socket.recv(1024)
-        print("Received:", response.decode())
-
-if __name__ == "__main__":
-    HOST = '127.0.0.1'  # The server's hostname or IP address
-    PORT = 65432        # The port used by the server
-    echo_client(HOST, PORT)
